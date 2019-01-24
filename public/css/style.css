@@ -125,3 +125,50 @@ div .owl-dots{
 /*i{*/
     /*text-decoration:none;*/
 /*}*/
+/*.fix{*/
+    /*!*background-image: url("img/yellowbook.gif");*!*/
+    /*!*background-repeat: no-repeat;*!*/
+    /*!*background-attachment: fixed;*!*/
+/*}*/
+.fa-clipboard, .fa-chalkboard-teacher, .fa-pen{
+    font-size:10rem;
+}
+.fahov:hover{
+    color:#DBBB26;
+}
+
+.background-grey{
+    background-color:#E9ECEF !important;
+}
+.background-grey:hover{
+    background-color:white !important;
+    color:#DBBB26;
+}
+.relative-pos{
+    position:relative;
+}
+.absolute-pos{
+    position:absolute;
+    top:4rem;
+    left:5rem;
+    color:white;
+}
+.btn-warning{
+    color:white;
+    background-color:#DBBB26;
+    border-color:#DBBB26;
+}
+
+.img-back{
+    padding:50px 0;
+    width:100%;
+    background-repeat:no-repeat;
+    background-color;
+    color:white;
+}
+.changep{
+    letter-spacing: 1px;
+    font-size: 14px;
+    color:#eee;
+
+}

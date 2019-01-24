@@ -1,20 +1,26 @@
 @extends('user.layout.layout')
 @section('content')
 <!--Introduction-->
-<div class="container mt-6" id="product">
+<div  style="background:linear-gradient(0deg,rgba(35,40,10,0.6),rgba(35,40,10,0.6)), url('{{asset('img/wall.jpg')}}');" class=" mt-6 img-back" id="product">
+    <div class="container">
     <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="text-center">
-                We are a new publication company bringing to you a new and a fresh outlook at Teaching and and will
-                provide with the best materials that will cater to the same.
+        <div class="col-md-10">
+            <div class="text-center ">
+
+               <div class="text-left" >
+                   <p><h2 class="h1 font-weight-bold">The Great of the greats</h2></p>
+                   <p class="changep">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam<br> We are a new publication company bringing to you a new and a fresh outlook at Teaching and and will provide with the best materials that will cater to the same.</p>
+                   <button class="btn btn-warning">Our Products</button>
+                   <button class="btn btn-warning">Our Services</button>
+               </div>
             </div>
         </div>
     </div>
-
+    </div>
 </div>
 
 <!--Product Slider -->
-<div class="jumbotron pb-0 pt-3">
+<div class=" pb-0 pt-3">
     <div class="row justify-content-center">
         <div class="col-md-6 col-offset-3">
             <div class="text-center border border-top-0 border-left-0 border-right-0 border-warning">
@@ -69,11 +75,12 @@
 </div>
 
 <!--Our services Bootstrap-CARD -->
-<div class="container pb-4">
+<div class="jumbotron">
+    <div class="container pb-4">
     <div class="row justify-content-center">
         <div class="col-md-6 col-offset-3">
             <div class="text-center border border-top-0 border-left-0 border-right-0 border-warning">
-                <h2>OUR SERVICES</h2>
+                <h2>TOP SERVICES</h2>
             </div>
         </div>
     </div>
@@ -113,8 +120,41 @@
         </div>
     </div>
 </div>
+</div>
 
+{{--Our Partner--}}
+<div class="container pb-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-offset-3">
+            <div class="text-center border border-top-0 border-left-0 border-right-0 border-warning">
+                <h2>OUR PARTNERS</h2>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
+    </div>
+    <div class="row align-items-center  pl-1">
+        <div class="col-md-4 col-sm-12 mb-2 ">
+            <a class="card p-0" href="#">
+                <img src="img/alphabet.png" class="card-img-top img-fluid" alt="...">
+            </a>
+        </div>
 
+        <div class="col-md-4 col-sm-12 mb-2 ">
+            <a class="card p-0" href="#">
+                <img src="img/1.jpg" class="card-img-top img-fluid"  alt="...">
+            </a>
+        </div>
+
+        <div class="col-md-4 col-sm-12 mb-2 ">
+            <a class="card p-0" href="#">
+                <img src="img/purpleturtle.jpg" class="card-img-top img-fluid"  alt="...">
+            </a>
+        </div>
+    </div>
+</div>
 
 <!--contact us form-->
 <div class="jumbotron mb-0">
@@ -148,6 +188,15 @@
         </div>
     </div>
 </div>
+</div>
+<!--Google Map embedded-->
+<div class="mapouter ">
+    <div class="gmap_canvas">
+        <iframe style="width:100%; height:400px;" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=creative%20edutainment&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+        </iframe>
+    </div>
 </div>
 @endsection
 
