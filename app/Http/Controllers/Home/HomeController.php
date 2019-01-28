@@ -30,7 +30,7 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        echo"store inhome controller";
+
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required',
@@ -44,7 +44,7 @@ class HomeController extends Controller
         $storeData->phone = $request->input('phone');
         $storeData->message = $request->input('message');
         $storeData->save();
-       // return redirect()->back();
+        return redirect()->back();
     }
 
 }

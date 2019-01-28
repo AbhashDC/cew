@@ -21,7 +21,7 @@ Route::post('/response','Home\HomeController@store' )->name('response');
 
 
 Route::prefix('admin')->group(function () {
-    Route::get('/','Admin\AdminController@index' )->name('admin.index');
-    Route::get('/response','Admin\AdminController@showResponse' )->name('admin.response');
-    Route::get('/product','Admin\AdminController@showProduct' )->name('admin.product');
+    Route::get('/','Admin\AdminController@showResponse' )->name('response.index');
+    Route::resource('/product','Admin\ProductController');
+    Route::resource('/service','Admin\ServiceController');
 });

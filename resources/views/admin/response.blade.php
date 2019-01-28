@@ -20,118 +20,35 @@
                                         Name
                                     </th>
                                     <th>
-                                        Country
+                                        Email
                                     </th>
                                     <th>
-                                        City
+                                        Phone
                                     </th>
                                     <th>
-                                        Salary
+                                        Message
                                     </th>
                                     </thead>
                                     <tbody>
+                                    @foreach($data as $dataOut)
                                     <tr>
                                         <td>
-                                            1
+                                           {{$dataOut->id}}
                                         </td>
                                         <td>
-                                            Dakota Rice
+                                            {{$dataOut->name}}
                                         </td>
                                         <td>
-                                            Niger
+                                            {{$dataOut->email}}
                                         </td>
                                         <td>
-                                            Oud-Turnhout
+                                            {{$dataOut->phone}}
                                         </td>
                                         <td class="text-primary">
-                                            $36,738
+                                            {{$dataOut->message}}
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            Minerva Hooper
-                                        </td>
-                                        <td>
-                                            Curaçao
-                                        </td>
-                                        <td>
-                                            Sinaai-Waas
-                                        </td>
-                                        <td class="text-primary">
-                                            $23,789
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            Sage Rodriguez
-                                        </td>
-                                        <td>
-                                            Netherlands
-                                        </td>
-                                        <td>
-                                            Baileux
-                                        </td>
-                                        <td class="text-primary">
-                                            $56,142
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td>
-                                            Philip Chaney
-                                        </td>
-                                        <td>
-                                            Korea, South
-                                        </td>
-                                        <td>
-                                            Overland Park
-                                        </td>
-                                        <td class="text-primary">
-                                            $38,735
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            5
-                                        </td>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                        <td class="text-primary">
-                                            $63,542
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            6
-                                        </td>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                        <td class="text-primary">
-                                            $78,615
-                                        </td>
-                                    </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

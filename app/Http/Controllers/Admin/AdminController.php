@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Response;
+use App\Response;
 
 class AdminController extends Controller
 {
@@ -21,11 +21,22 @@ class AdminController extends Controller
     }
     public function showResponse()
     {
-       // $data = Response::all();
-        return view('admin.response');
-            //->with('data', $data);
+        $data = Response::all();
+        return view('admin.response')->with('data', $data);
     }
     public function showProduct()
+    {
+        // $data = Response::all();
+        return view('admin.product');
+        //->with('data', $data);
+    }
+    public function showBlog()
+    {
+        // $data = Response::all();
+       return view('admin.product');
+        //->with('data', $data);
+    }
+    public function showService()
     {
         // $data = Response::all();
         return view('admin.product');
@@ -50,20 +61,6 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //validate
-//        $this->validate($request, [
-//            'name' => 'required',
-//            'email' => 'required',
-//            'phone' => 'required',
-//            'message' => 'required'
-//        ]);
-        //store
-        $storeData = new Response;
-        $storeData->name = $request->input('name');
-        $storeData->email = $request->input('email');
-        $storeData->phone = $request->input('phone');
-        $storeData->message = $request->input('message');
-//        return redirect()->back();
     }
 
     /**
