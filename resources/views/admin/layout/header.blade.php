@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- Material Kit CSS -->
     <link href="{{asset('css/material-dashboard.css?v=2.1.1')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('css/all.css')}}">
 </head>
 
 <body>
