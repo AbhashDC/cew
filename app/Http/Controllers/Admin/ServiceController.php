@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Service;
+use Storage;
 
 class ServiceController extends Controller
 {
@@ -15,9 +16,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view('admin.service');
-//        $data=Product::all();
-//        return view('admin.product')->with('data',$data);
+        $data=Service::all();
+        return view('admin.service')->with('data',$data);
     }
 
     /**
@@ -27,7 +27,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.serviceform');
     }
 
     /**
@@ -41,33 +41,33 @@ class ServiceController extends Controller
         //Handle file upload
         if($request->hasFile('image')) {
             //get filename with extension
-            $filenameWithExt = $request->file('image')->getClientOriginalImage();
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
             //Get just filename
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             //Get extension
-            $extension = $request->file('image')->getOriginalClientExtension();
+            $extension = $request->file('image')->guessClientExtension();
             //filename to store
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
             //uploadimage
-            $path = $request->file('image')->storeAs('public/img', $fileNameToStore);
+            $path = $request->file('image')->storeAs('public/img/service/', $fileNameToStore);
             //stores at storage/app/public/img
-            $data=new Product();
+            $data=new Service();
             $data->name=$request->name;
             $data->short_description=$request->short;
             $data->description=$request->description;
             $data->image=$fileNameToStore;
             $data->save();
-            return redirect()->back();
+            return redirect()->route('service.index');
         }
         else{
             $fileNameToStore="noimage.jpg";
-            $data=new Product();
+            $data=new Service();
             $data->name=$request->name;
             $data->short_description=$request->short;
             $data->description=$request->description;
             $data->image=$fileNameToStore;
             $data->save();
-            return redirect()->back();
+            return redirect()->route('service.index');
         }
     }
 
@@ -90,7 +90,8 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $datas=Service::find($id);
+        return view('admin.serviceedit')->with('data',$datas);
     }
 
     /**
@@ -102,35 +103,39 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data= Service::find($id);
         if($request->hasFile('image')) {
+            //delete old image
+            Storage::delete('public/img/service/' . $data->image);
             //get filename with extension
-            $filenameWithExt = $request->file('image')->getClientOriginalImage();
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
             //Get just filename
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             //Get extension
-            $extension = $request->file('image')->getOriginalClientExtension();
+            $extension = $request->file('image')->guessClientExtension();
             //filename to store
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
             //uploadimage
-            $path = $request->file('image')->storeAs('public/img', $fileNameToStore);
+            $path = $request->file('image')->storeAs('public/img/service/', $fileNameToStore);
             //stores at storage/app/public/img
-            $data=new Product();
+
             $data->name=$request->name;
             $data->short_description=$request->short;
             $data->description=$request->description;
             $data->image=$fileNameToStore;
             $data->save();
-            return redirect()->back();
+
+            return redirect()->route('service.index');
         }
         else{
             // $fileNameToStore="noimage.jpg";
-            $data= Product();
+
             $data->name=$request->name;
             $data->short_description=$request->short;
             $data->description=$request->description;
             //$data->image=$fileNameToStore;
             $data->save();
-            return redirect()->back();
+            return redirect()->route('service.index');
         }
     }
 
@@ -142,6 +147,9 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data=Service::find($id);
+        Storage::delete('public/img/service/' . $data->image);
+        $data->delete();
+        return redirect()->route('service.index');
     }
 }

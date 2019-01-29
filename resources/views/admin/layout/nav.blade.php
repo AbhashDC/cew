@@ -14,7 +14,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#pablo">
-                        <i class="material-icons">notifications</i> Notifications
+                        <i class="material-icons">power_settings_new</i> Logout
                     </a>
                 </li>
                 <!-- your navbar here -->

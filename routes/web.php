@@ -24,4 +24,5 @@ Route::prefix('admin')->group(function () {
     Route::get('/','Admin\AdminController@showResponse' )->name('response.index');
     Route::resource('/product','Admin\ProductController');
     Route::resource('/service','Admin\ServiceController');
+    Route::resource('/blog','Admin\BlogController');
 });

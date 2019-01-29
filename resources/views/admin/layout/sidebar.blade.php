@@ -29,12 +29,12 @@
                     <p>Service</p>
                 </a>
             </li>
-            {{--<li class="nav-item {{(Request::segment(2)=='blog')?'active':''}}">--}}
-                {{--<a class="nav-link" href="{{route('admin.blog')}}">--}}
-                    {{--<i class="material-icons">subtitles</i>--}}
-                    {{--<p>Blog</p>--}}
-                {{--</a>--}}
-            {{--</li>--}}
+            <li class="nav-item {{(Request::segment(2)=='blog')?'active':''}}">
+                <a class="nav-link" href="{{route('admin.blog')}}">
+                    <i class="material-icons">subtitles</i>
+                    <p>Blog</p>
+                </a>
+            </li>
 
         </ul>
     </div>
