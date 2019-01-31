@@ -22,6 +22,13 @@ class HomeController extends Controller
     public function detail() {
         return view('user.productdetail');
     }
+    public function career() {
+        return view('user.career');
+    }
+    public function vacancy()
+    {
+        return view('user.vacancy');
+    }
     /**
      * Store a newly created resource in storage.
      *

@@ -38,10 +38,7 @@
                     <a class="nav-link p-4" href="{{route('contact')}}">Contact</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link p-4" href="{{route('contact')}}">Career</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link p-4" href="{{route('contact')}}">Blog</a>
+                    <a class="nav-link p-4" href="{{route('career')}}">Career</a>
                 </li>
             </ul>
         </div>

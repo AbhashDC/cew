@@ -17,12 +17,13 @@ Route::get('/service','Home\HomeController@service' )->name('service');
 Route::get('/contact','Home\HomeController@contact' )->name('contact');
 Route::get('/detail','Home\HomeController@detail' )->name('detail');
 Route::post('/response','Home\HomeController@store' )->name('response');
-
+Route::get('/career','Home\HomeController@career' )->name('career');
+Route::get('/vacancy','Home\HomeController@vacancy')->name('vacancy');
 
 
 Route::prefix('admin')->group(function () {
     Route::get('/','Admin\AdminController@showResponse' )->name('response.index');
     Route::resource('/product','Admin\ProductController');
     Route::resource('/service','Admin\ServiceController');
-    Route::resource('/blog','Admin\BlogController');
+    Route::resource('/career','Admin\CareerController');
 });

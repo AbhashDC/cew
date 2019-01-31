@@ -48,7 +48,7 @@ class CareerController extends Controller
             //filename to store
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
             //uploadimage
-            $path = $request->file('image')->storeAs('public/img/product/', $fileNameToStore);
+            $path = $request->file('image')->storeAs('public/img/career/', $fileNameToStore);
             //stores at storage/app/public/img
             $data = new Product();
             $data->name = $request->name;
@@ -56,7 +56,7 @@ class CareerController extends Controller
             $data->description = $request->description;
             $data->image = $fileNameToStore;
             $data->save();
-            return redirect()->route('product.index');
+            return redirect()->route('career.index');
         } else {
             $fileNameToStore = "noimage.jpg";
             $data = new Product();
@@ -65,7 +65,7 @@ class CareerController extends Controller
             $data->description = $request->description;
             $data->image = $fileNameToStore;
             $data->save();
-            return redirect()->route('product.index');
+            return redirect()->route('career.index');
         }
     }
 
@@ -105,7 +105,7 @@ class CareerController extends Controller
         $data = product::find($id);
         if ($request->hasFile('image')) {
             //delete old image
-            Storage::delete('public/img/product/' . $data->image);
+            Storage::delete('public/img/career/' . $data->image);
             //get filename with extension
             $filenameWithExt = $request->file('image')->getClientOriginalName();
             //Get just filename
@@ -115,7 +115,7 @@ class CareerController extends Controller
             //filename to store
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
             //uploadimage
-            $path = $request->file('image')->storeAs('public/img/product/', $fileNameToStore);
+            $path = $request->file('image')->storeAs('public/img/career/', $fileNameToStore);
             //stores at storage/app/public/img
 
             $data->name = $request->name;
@@ -124,7 +124,7 @@ class CareerController extends Controller
             $data->image = $fileNameToStore;
             $data->save();
 
-            return redirect()->route('product.index');
+            return redirect()->route('career.index');
         } else {
             // $fileNameToStore="noimage.jpg";
 
@@ -133,7 +133,7 @@ class CareerController extends Controller
             $data->description = $request->description;
             //$data->image=$fileNameToStore;
             $data->save();
-            return redirect()->route('product.index');
+            return redirect()->route('career.index');
         }
     }
 
@@ -146,8 +146,8 @@ class CareerController extends Controller
     public function destroy($id)
     {
         $data = Product::find($id);
-        Storage::delete('public/img/product/' . $data->image);
+        Storage::delete('public/img/career/' . $data->image);
         $data->delete();
-        return redirect()->route('product.index');
+        return redirect()->route('career.index');
     }
 }

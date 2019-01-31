@@ -25,14 +25,14 @@
             </li>
             <li class="nav-item {{(Request::segment(2)=='service')?'active':''}}">
                 <a class="nav-link" href="{{route('service.index')}}">
-                    <i class="material-icons">content_paste</i>
+                    <i class="material-icons">layers</i>
                     <p>Service</p>
                 </a>
             </li>
-            <li class="nav-item {{(Request::segment(2)=='blog')?'active':''}}">
-                <a class="nav-link" href="{{route('admin.blog')}}">
-                    <i class="material-icons">subtitles</i>
-                    <p>Blog</p>
+            <li class="nav-item {{(Request::segment(2)=='career')?'active':''}}">
+                <a class="nav-link" href="{{route('career.index')}}">
+                    <i class="material-icons">work</i>
+                    <p>Career</p>
                 </a>
             </li>
 
