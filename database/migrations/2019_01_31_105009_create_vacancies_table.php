@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCareersTable extends Migration
+class CreateVacanciesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateCareersTable extends Migration
      */
     public function up()
     {
-        Schema::create('careers', function (Blueprint $table) {
+        Schema::create('vacancies', function (Blueprint $table) {
             $table->increments('id');
-            $table->mediumText('title');
-            $table->longText('summary');
-            $table->longText('qualification');
-            $table->longText('specification');
+            $table->integer('careers_id')->unsigned();
+            $table->foreign('careers_id')->references('id')->on('careers');
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('file');
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreateCareersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('careers');
+        Schema::dropIfExists('vacancies');
     }
 }

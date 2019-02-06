@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Response;
+use App\Career;
+use App\Vacancy;
 class HomeController extends Controller
 {
     public function index () {
@@ -23,11 +25,13 @@ class HomeController extends Controller
         return view('user.productdetail');
     }
     public function career() {
-        return view('user.career');
+        $data=Career::all();
+        return view('user.career')->with('data',$data);
     }
-    public function vacancy()
+    public function vacancy($id)
     {
-        return view('user.vacancy');
+        $data=Career::find($id);
+        return view('user.vacancy')->with('data',$data);
     }
     /**
      * Store a newly created resource in storage.
@@ -38,20 +42,40 @@ class HomeController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'message' => 'required'
-        ]);
+//        $this->validate($request, [
+//            'name' => 'required',
+//            'email' => 'required',
+//            'phone' => 'required',
+//            'message' => 'required'
+//        ]);
 
-        $storeData = new Response();
-        $storeData->name = $request->input('name');
-        $storeData->email = $request->input('email');
-        $storeData->phone = $request->input('phone');
-        $storeData->message = $request->input('message');
-        $storeData->save();
-        return redirect()->back();
+
+        //Handle file upload
+        if($request->hasFile('file')) {
+            //get filename with extension
+            $filenameWithExt = $request->file('file')->getClientOriginalName();
+            //Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //Get extension
+            $extension = $request->file('file')->guessClientExtension();
+            //filename to store
+            $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+            //uploadfile
+            $path = $request->file('file')->storeAs('public/application/', $fileNameToStore);
+            //stores at storage/app/public/img
+            $data=new Vacancy();
+            $data->careers_id=$request->id;
+            $data->name=$request->name;
+            $data->email=$request->email;
+            $data->phone=$request->phone;
+            $data->file=$fileNameToStore;
+            $data->save();
+            return redirect()->route('career');
+        }
+        else{
+
+            return redirect()->route('career');
+        }
     }
 
 }

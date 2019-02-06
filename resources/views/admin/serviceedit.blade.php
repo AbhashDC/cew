@@ -11,7 +11,7 @@
                         <div class="card-body">
                             <form method="post" action="/admin/service/{{$data->id}}" enctype="multipart/form-data">
                                 @csrf
-                                @method('PUT');
+                                @method('PUT')
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Name</label>
                                     <input type="text" class="form-control" value="{{$data->name}}" name="name" id="exampleFormControlInput1" placeholder="name@example.com">

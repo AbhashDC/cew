@@ -5,31 +5,24 @@
         <div class="row justify-content-center mb-4">
             <div class="col-md-6 col-offset-3">
                 <div class="text-center border border-top-0 border-left-0 border-right-0 border-warning">
-                    <h2>TEACHER</h2>
+                    <h2>{!! $data->title !!}</h2>
                 </div>
             </div>
         </div>
         <div class="row">
                 <p class="font-weight-bold">JOB SUMMARY:</p>
             <div class="col-md-12">
-                <p>Nodejs Developer develops the project in real by writing codes for the project following company set coding standard to maintain uniformity in the codes and ensure quality of the project.</p>
+                {!! $data->summary !!}
             </div>
 
             <p class="font-weight-bold">QUALIFICATIONS & EXPERIENCE:</p>
             <div class="col-md-12">
-                <p>Bachelor degree in Computer Engineering/Science. [BE, BTech, BIT, BSc CSIT]
-                    Minimum 2 years experience in Node.js Programming</p>
+                {!! $data->qualification !!}
             </div>
 
             <p class="font-weight-bold">JOB SPECIFICATIONS:</p>
             <div class="col-md-12">
-                <p>Expert-level Knowledge of Node.js and frameworks available (eg. Express, StrongLoop, etc.). MEAN stack development would be a plus. <br>
-                    Strong knowledge of javascript template engine. <br>
-                    Strong proficiency with JavaScript and front end framework like Angular  or vue.js. <br>
-                    Good database design and proficient in writing SQL queries. <br>
-                    Good knowledge of NoSQL database like Mongodb. <br>
-                    Experience in developing applications servicing large transactional system utilizing SQL. <br>
-                    HTML, XML, Web Services, HTTP, SOAP, REST.</p>
+                {!! $data->specification !!}
             </div>
         </div>
     </div>
@@ -46,8 +39,9 @@
 
                     </div>
                     <div class="col-md-6 col-sm-12 form-color padding-3">
-                        <form action="{{route('response')}}" method="POST">
+                        <form action="{{route('response')}}" method="POST" enctype= "multipart/form-data">
                             @csrf
+                            <input type="hidden" name="id" value="{!! $data->id !!}">
                             <label>
                                 <h3><p class="font-weight-bold padding-top-13"></p></h3>
                                 <p class="font-weight-bold"></p></label>
@@ -81,11 +75,5 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
 
 @endsection

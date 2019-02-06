@@ -18,8 +18,12 @@ Route::get('/contact','Home\HomeController@contact' )->name('contact');
 Route::get('/detail','Home\HomeController@detail' )->name('detail');
 Route::post('/response','Home\HomeController@store' )->name('response');
 Route::get('/career','Home\HomeController@career' )->name('career');
-Route::get('/vacancy','Home\HomeController@vacancy')->name('vacancy');
+Route::get('/vacancy/{id}','Home\HomeController@vacancy')->name('vacancy');
+Route::get('/store','Home\HomeController@store')->name('store');
 
+
+
+//Route::get('/home', 'HomeController@index');
 
 Route::prefix('admin')->group(function () {
     Route::get('/','Admin\AdminController@showResponse' )->name('response.index');
@@ -27,3 +31,9 @@ Route::prefix('admin')->group(function () {
     Route::resource('/service','Admin\ServiceController');
     Route::resource('/career','Admin\CareerController');
 });
+
+Auth::routes();
+
+
+
+

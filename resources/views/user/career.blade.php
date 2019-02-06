@@ -9,32 +9,16 @@
                 </div>
             </div>
         </div>
+        @foreach($data as $datas)
         <div class="row border border-top-0 border-left-0 border-right-0 mb-4">
             <div class="col-md-4 offset-md-4">
-            Teacher
+            {!! $datas->title !!}
             </div>
             <div class="col-md-4 mb-3">
-            <a href="{{route('vacancy')}}"class="btn btn-outline-warning">APPLY</a>
+            <a href="{{url('vacancy/'.$datas->id)}}"class="btn btn-outline-warning">APPLY</a>
             </div>
         </div>
-
-        <div class="row border border-top-0 border-left-0 border-right-0 mb-4">
-            <div class="col-md-4 offset-md-4">
-                Teacher
-            </div>
-            <div class="col-md-4 mb-3">
-                <a href="{{route('vacancy')}}" class="btn btn-outline-warning">APPLY</a>
-            </div>
-        </div>
-
-        <div class="row border border-top-0 border-left-0 border-right-0 mb-4">
-            <div class="col-md-4 offset-md-4">
-                Teacher
-            </div>
-            <div class="col-md-4 mb-3">
-                <a href="{{route('vacancy')}}" class="btn btn-outline-warning">APPLY</a>
-            </div>
-        </div>
+        @endforeach
     </div>
 
 

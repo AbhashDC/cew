@@ -7,7 +7,7 @@
                     <div class="card">
                         <div class="card-header card-header-primary">
                             <h4 class="card-title ">Job Posting</h4>
-                            <a class="btn btn-danger" href="{{route('product.create')}}" >New Product</a>
+                            <a class="btn btn-danger" href="{{route('career.create')}}" >New Job</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -17,16 +17,16 @@
                                         ID
                                     </th>
                                     <th>
-                                        Name
+                                        Title
                                     </th>
                                     <th>
-                                        Short Description
+                                        Summary
                                     </th>
                                     <th>
-                                        Description
+                                        Qualification
                                     </th>
                                     <th>
-                                        Image
+                                        Specification
                                     </th>
                                     <th>
                                         Action
@@ -39,20 +39,23 @@
                                                 {{$datas->id}}
                                             </td>
                                             <td>
-                                                {{$datas->name}}
+                                                {!!  $datas->title!!}
+
                                             </td>
                                             <td>
-                                                {{$datas->short_description}}
+                                                {!! $datas->summary !!}
+
                                             </td>
                                             <td>
-                                                {{$datas->description}}
+                                                {!! $datas->qualification !!}
+
                                             </td>
                                             <td>
-                                                <img src="{{asset('storage/img/product/'.$datas->image)}}" class="img-fluid" >
+                                                {!! $datas->specification !!}
                                             </td>
                                             <td>
-                                                <a class="btn btn-primary btn-block" href="/admin/product/{{$datas->id}}/edit">Edit</a>
-                                                <form action="/admin/product/{{$datas->id}}" method="POST">
+                                                <a class="btn btn-primary btn-block" href="/admin/career/{{$datas->id}}/edit">Edit</a>
+                                                <form action="/admin/career/{{$datas->id}}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
                                                     <input type="submit" value="Delete" class="btn btn-danger btn-block" >
@@ -66,10 +69,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                View job posting
-                <div class="col-md-6">
-
                 </div>
             </div>
         </div>
