@@ -1,6 +1,7 @@
 *{
-    font-family: 'Roboto', sans-serif;
+    font-family: apercu, 'Roboto', sans-serif;
 }
+
 .bg-light{
     /*background-color:#DBBB26 !important;*/
 }
@@ -18,7 +19,8 @@ margin-top:5rem !important;
      text-align:center;
  }
 .owl-next span,.owl-prev span {
-    font-size:3rem;
+    /*font-size:3rem;*/
+    display:none;
 }
 .btn-logo-color{
     background-color:#DBBB26;
