@@ -11,9 +11,27 @@
     <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    {{--<style>--}}
+        {{--#loader{--}}
+            {{--z-index:999999;--}}
+            {{--display:block;--}}
+            {{--position:fixed;--}}
+            {{--top:0;--}}
+            {{--left:0;--}}
+            {{--width:100%;--}}
+            {{--height:100%;--}}
+            {{--background:url(img/preloader.gif) 50% 50% no-repeat #fff;--}}
+        {{--}--}}
+    {{--</style>--}}
     <title>Home | Creative Edutainment World</title>
 </head>
 <body>
+{{--<div id="loader"></div>--}}
+{{--<script>--}}
+    {{--$(window).load(function(){--}}
+        {{--$("#loader").fadeOut("slow");--}}
+    {{--});--}}
+{{--</script>--}}
 <!--Nav Bar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm rounded p-0 ">
     <div class="container">
@@ -44,3 +62,4 @@
         </div>
     </div>
 </nav>
+

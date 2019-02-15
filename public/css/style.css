@@ -12,7 +12,7 @@ margin-top:5rem !important;
     margin-top:7rem !important;
 }
  .nav-link:hover{
-    background-color:#DBBB26 !important;
+    background-color:#FFD600 !important;
     color:white !important;
 }
  .owl-nav {
@@ -23,12 +23,12 @@ margin-top:5rem !important;
     display:none;
 }
 .btn-logo-color{
-    background-color:#DBBB26;
-    border-color:#DBBB26;
+    background-color:#FFD600;
+    border-color:#FFD600;
 }
 .btn-logo-color:hover{
-    background-color:#AD9200;
-    border-color:#AD9200;
+    background-color:#DBBB26;
+    border-color:#DBBB26;
     color:white;
 }
 .padding-1-6{
@@ -41,7 +41,7 @@ div .owl-dots{
     display:none !important;
 }
 .border-logo{
-    border-color:#DBBB26 !important;
+    border-color:#FFD600 !important;
 }
 #map{
     height:100%;
@@ -51,7 +51,7 @@ div .owl-dots{
     background-color: #F3EABC;
 }
 .map-color{
-    background-color:#DBBB26;
+    background-color:#FFD600;
 }
 .mapouter {
     text-align: right;
@@ -110,7 +110,7 @@ div .owl-dots{
 }
 .fab{
     color: white;
-    background-color: #DBBB26;
+    background-color: #FFD600;
     border: 1px solid;
     /* padding: 5px; */
     height: 30px;
@@ -121,7 +121,7 @@ div .owl-dots{
     border-radius: 4px;
 }
 .fab:hover{
-    color:#DBBB26;
+    color:#FFD600;
     background-color:white;
 }
 /*i{*/
@@ -136,7 +136,7 @@ div .owl-dots{
     font-size:10rem;
 }
 .fahov:hover{
-    color:#DBBB26;
+    color:#FFD600;
 }
 
 .background-grey{
@@ -144,7 +144,7 @@ div .owl-dots{
 }
 .background-grey:hover{
     background-color:white !important;
-    color:#DBBB26;
+    color:#FFD600;
 }
 .relative-pos{
     position:relative;
@@ -157,8 +157,8 @@ div .owl-dots{
 }
 .btn-warning{
     color:white;
-    background-color:#DBBB26;
-    border-color:#DBBB26;
+    background-color:#FFD600;
+    border-color:#FFD600;
 }
 
 .img-back{
