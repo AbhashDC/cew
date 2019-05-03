@@ -11,29 +11,36 @@
 |
 */
 
-Route::get('/', 'Home\HomeController@index')->name('home');
-Route::get('/product','Home\HomeController@product' )->name('product');
-Route::get('/service','Home\HomeController@service' )->name('service');
-Route::get('/contact','Home\HomeController@contact' )->name('contact');
-Route::get('/detail','Home\HomeController@detail' )->name('detail');
-Route::post('/response','Home\HomeController@store' )->name('response');
-Route::get('/career','Home\HomeController@career' )->name('career');
+
+Route::get('/', 'Home\HomeController@index')->name('index');
+Route::get('/career','Home\HomeController@career')->name('career');
 Route::get('/vacancy/{id}','Home\HomeController@vacancy')->name('vacancy');
-Route::get('/store','Home\HomeController@store')->name('store');
+Route::get('/vacancy', function () {
+    return view('home.vacancy');
+})->name('vacancy');
+Route::get('/product', 'Home\HomeController@product')->name('product');
+Route::get('/blog-detail', function () {
+    return view('home.detail');
+})->name('detail');
+Route::get('/blogs', function () {
+    return view('home.blog');
+})->name('blog');
+Route::get('/worksheet', 'Home\HomeController@workSheet')->name('worksheet');
 
 
-
-//Route::get('/home', 'HomeController@index');
+Route::post('/response','Home\HomeController@response' )->name('response');
+ // Route::get('/home', 'HomeController@index');
+ Route::get('/home', function () {
+     return redirect()->route('response.index');
+ });
 
 Route::prefix('admin')->group(function () {
     Route::get('/','Admin\AdminController@showResponse' )->name('response.index');
+      Route::get('/codestore','Admin\CodeController@codeStore' )->name('code.stores');
     Route::resource('/product','Admin\ProductController');
     Route::resource('/service','Admin\ServiceController');
     Route::resource('/career','Admin\CareerController');
+    Route::resource('/code','Admin\CodeController');
 });
 
 Auth::routes();
-
-
-
-

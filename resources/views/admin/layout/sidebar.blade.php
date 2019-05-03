@@ -35,7 +35,12 @@
                     <p>Career</p>
                 </a>
             </li>
-
+            <li class="nav-item {{(Request::segment(2)=='code')?'active':''}}">
+                <a class="nav-link" href="{{route('code.index')}}">
+                    <i class="material-icons">library_books</i>
+                    <p>Worksheet</p>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

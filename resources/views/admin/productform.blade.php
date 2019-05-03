@@ -17,11 +17,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Short Description</label>
-                                    <input type="text" class="form-control" name="short"id="exampleFormControlInput1" placeholder="name@example.com">
+                                    <input type="text" class="form-control" name="short" id="article-ckeditor" placeholder="name@example.com">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Description</label>
-                                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control" name="description" id="article-ckeditor1" rows="3"></textarea>
                                 </div>
                                 <div class="">
                                     <label for="exampleFormControlInput1">Image Upload</label> <br>
@@ -36,5 +36,3 @@
         </div>
     </div>
 @endsection
-
-

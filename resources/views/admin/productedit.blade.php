@@ -18,11 +18,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Short Description</label>
-                                    <input type="text" class="form-control" value="{{$data->short_description}}" name="short"id="exampleFormControlInput1" placeholder="name@example.com">
+                                    <input type="text" class="form-control" id="article-ckeditor" value="{{$data->short_description}}" name="short" placeholder="name@example.com">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Description</label>
-                                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3">{{$data->description}}
+                                    <textarea class="form-control" name="description" id="article-ckeditor1" rows="3">{{$data->description}}
                                     </textarea>
                                 </div>
                                 <div class="">
@@ -38,5 +38,3 @@
         </div>
     </div>
 @endsection
-
-
