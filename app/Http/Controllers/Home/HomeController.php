@@ -53,7 +53,7 @@ class HomeController extends Controller
 //            'message' => 'required'
 //        ]);
 
-
+//This is use less
         //Handle file upload
         if($request->hasFile('file')) {
             //get filename with extension
